@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "doc-enhanced-flow-trigger-client-side-solution",
-    "id": "5DA1DC8B-F9A4-43D4-9A0B-C2E89E2D5FBE",
-    "version": "2.0.1.0",
+    "name": "list-enhanced-flow-trigger-client-side-solution",
+    "id": "4e07447e-5e7b-47cf-9703-352250244134",
+    "version": "2.0.3.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": false,
     "isDomainIsolated": false,
@@ -29,7 +29,7 @@
       {
         "title": "Application Extension - Deployment of custom action",
         "description": "Deploys a custom action with ClientSideComponentId association",
-        "id": "2f4bcd0a-2956-4803-8024-911265601037",
+        "id": "e5d232cb-ec2f-428c-b63b-ce5b1377b40a",
         "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
@@ -44,6 +44,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/releases/doc-enhanced-flow-trigger.sppkg"
+    "zippedPackage": "solution/releases/list-enhanced-flow-trigger.sppkg"
   }
 }

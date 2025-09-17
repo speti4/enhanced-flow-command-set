@@ -6,7 +6,7 @@
     "default": {
       "pageUrl": "https://{your_SharePoint_site_here}",
       "customActions": {
-        "543ef5be-c9cb-4b7b-bdaf-592c7be1493a": {
+        "f8098e01-30d8-4411-a27d-da7328c0eca6": {
           "location": "ClientSideExtension.ListViewCommandSet",
           "properties": {}
         }
@@ -15,7 +15,7 @@
     "enhancedFlowTrigger": {
       "pageUrl": "https://{your_SharePoint_site_here}",
       "customActions": {
-        "543ef5be-c9cb-4b7b-bdaf-592c7be1493a": {
+        "f8098e01-30d8-4411-a27d-da7328c0eca6": {
           "location": "ClientSideExtension.ListViewCommandSet",
           "properties": {}
         }

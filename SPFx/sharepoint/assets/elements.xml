@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <CustomAction Title="EnhancedFlowTrigger" RegistrationId="101" RegistrationType="List" Location="ClientSideExtension.ListViewCommandSet" ClientSideComponentId="543ef5be-c9cb-4b7b-bdaf-592c7be1493a" ClientSideComponentProperties="{}">
+  <CustomAction Title="EnhancedFlowTrigger" RegistrationId="100" RegistrationType="List" Location="ClientSideExtension.ListViewCommandSet" ClientSideComponentId="f8098e01-30d8-4411-a27d-da7328c0eca6" ClientSideComponentProperties="{}">
   </CustomAction>
   <ListInstance CustomSchema="triggerConfigListSchema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" Title="Enhanced Flow Trigger Configuration" Description="" TemplateType="100" Url="Lists/EnhancedFlowTriggerConfiguration">
   </ListInstance>
