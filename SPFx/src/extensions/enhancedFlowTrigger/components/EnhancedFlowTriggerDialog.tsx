@@ -1,5 +1,5 @@
 /* eslint-disable @microsoft/spfx/no-async-await */
-import { Dialog, DialogFooter, DialogType, Dropdown, IDialogContentProps, IDropdownOption, IModalProps, PrimaryButton, Spinner, SpinnerSize, Stack } from "@fluentui/react";
+import { Dialog, DialogFooter, DialogType, Dropdown, IDialogContentProps, IDropdownOption, IModalProps, IButtonProps, PrimaryButton as FluentPrimaryButton, Spinner, SpinnerSize, Stack } from "@fluentui/react";
 import { ListViewCommandSetContext, RowAccessor } from "@microsoft/sp-listview-extensibility";
 import * as strings from "EnhancedFlowTriggerCommandSetStrings";
 import * as React from "react";
@@ -8,6 +8,9 @@ import { stringIsNullOrEmpty, useToggle, validateVisibility } from "../../../lib
 import { IFlowResponse, ITriggerConfig } from "../../../models";
 import { IFlowService } from "../../../services";
 import styles from "../styles/EnhancedFlowTriggerDialog.module.scss";
+
+const PrimaryButton: React.FC<IButtonProps> = (props) =>
+  React.createElement(FluentPrimaryButton as unknown as React.ComponentType<IButtonProps>, props);
 
 export interface IEnhancedFlowTriggerDialogProps {
   flowService: IFlowService;

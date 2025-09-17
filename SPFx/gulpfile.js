@@ -26,7 +26,14 @@ build.tslintCmd.enabled = false;
 
 // Integrate .env files
 // See also: https://digitalworkplace365.wordpress.com/2020/03/05/using-env-files-in-sharepoint-framework-development/
-const webpack = require("webpack");
+const resolveWebpack = () => {
+  try {
+    return require("@microsoft/sp-build-web/node_modules/webpack");
+  } catch (error) {
+    return require("webpack");
+  }
+};
+const webpack = resolveWebpack();
 const gutil = require("gulp-util");
 const getClientEnvironment = require("./gulp-tasks/process-env");
 
@@ -47,12 +54,18 @@ build.configureWebpack.mergeConfig({
       const currentEnv = getClientEnvironment().stringified;
 
       if (pluginDefine) {
-        // The parsing error is false alarm. Annoying es6 thingy,
-        // and i do not want to install babel eslint just to get rid of this error. You can ignore it for now
-        pluginDefine.definitions = {
-          ...pluginDefine.definitions,
-          ...currentEnv,
-        };
+        const existingDefinitions = pluginDefine.definitions;
+
+        if (existingDefinitions instanceof Map) {
+          Object.entries(currentEnv).forEach(([key, value]) => {
+            existingDefinitions.set(key, value);
+          });
+        } else {
+          pluginDefine.definitions = {
+            ...existingDefinitions,
+            ...currentEnv,
+          };
+        }
       } else {
         cfg.plugins.push(new webpack.DefinePlugin(currentEnv));
       }

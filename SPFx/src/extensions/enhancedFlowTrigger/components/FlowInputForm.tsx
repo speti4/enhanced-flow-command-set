@@ -1,5 +1,5 @@
 /* eslint-disable @microsoft/spfx/no-async-await */
-import { ComboBox, DatePicker, DayOfWeek, defaultDatePickerStrings, Dropdown, PrimaryButton, Stack, TextField } from "@fluentui/react";
+import { ComboBox, DatePicker, DayOfWeek, defaultDatePickerStrings, Dropdown, IButtonProps, PrimaryButton as FluentPrimaryButton, Stack, TextField } from "@fluentui/react";
 import { ListViewCommandSetContext, RowAccessor } from "@microsoft/sp-listview-extensibility";
 import { Logger } from "@pnp/logging";
 import { PeoplePicker, PrincipalType } from "@pnp/spfx-controls-react/lib/PeoplePicker";
@@ -9,6 +9,9 @@ import { stringIsNullOrEmpty, useToggle } from "../../../library";
 import { IFlowResponse, IRequestedUserInput, ITriggerConfig, SupportedInputTypes } from "../../../models";
 import { IFlowService } from "../../../services";
 import styles from "../styles/FormInputForm.module.scss";
+
+const PrimaryButton: React.FC<IButtonProps> = (props) =>
+  React.createElement(FluentPrimaryButton as unknown as React.ComponentType<IButtonProps>, props);
 
 export interface IFlowInputFormProps {
   selectedFlowTrigger: ITriggerConfig;
